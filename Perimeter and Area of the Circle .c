@@ -1,6 +1,6 @@
-//Calculate Perimeter and Area of a Circle
-//p=2*pi*r
-//a=pi*r*r
+// Calculate Perimeter and Area of a Circle
+// p=2*pi*r
+// a=pi*r*r
 
 #include<stdio.h>
 #define PI 3.14
