@@ -1,6 +1,6 @@
-//Calculate the Compound Interest
-//A=P*(1+r/100)^t
-//CI=A-P
+// Calculate the Compound Interest
+// A=P*(1+r/100)^t
+// CI=A-P
 
 #include<stdio.h>
 int main()
