@@ -59,8 +59,10 @@ int main()
 {
 	int n;
 	int *p;
+	
 	printf("Enter Number of Elements : \n");
 	scanf("%i", &n);
+	
 	p=input(n);
 	ls(p, n);
 	
