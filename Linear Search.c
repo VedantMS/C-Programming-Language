@@ -6,7 +6,7 @@ int* input(int n)
 {
 	int i=0;
 	int *ptr;
-	ptr=(int*)malloc(n*sizeof(int));
+	ptr = (int*)malloc(n*sizeof(int));
 	printf("Enter Elements : \n");
 	
 	for(i=0; i<n; i++)
