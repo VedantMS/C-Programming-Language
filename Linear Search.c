@@ -1,6 +1,7 @@
 // Linear Search
 
 #include<stdio.h>
+#include<stdlib.h>
 
 int* input(int n)
 {
@@ -43,6 +44,8 @@ void ls(int *p, int n)
 		{
 			goto ls;
 		}
+
+	free(p);
 };
 
 int main()
