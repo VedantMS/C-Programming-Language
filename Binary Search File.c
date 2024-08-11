@@ -52,7 +52,7 @@ int main()
 	cities c[10];
 	int i=0, cstd;
 	
-	f = fopen("C:\\Users\\Vedant\\Desktop\\File Name.txt", "r");
+	f = fopen("File Name.txt", "r");
 	if(f == NULL)
 		{
 			printf("File Not Found. \n");
