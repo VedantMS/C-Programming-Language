@@ -51,7 +51,6 @@ int main()
 	int i=0;
 	
 	f = fopen("File Name.txt", "r");
-	
 	if(f == NULL)
 		{
 			printf("File Not Found. \n");
