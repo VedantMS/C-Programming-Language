@@ -45,7 +45,7 @@ int main()
 	char city[10];
 	int i=0;
 	
-	f = fopen("C:\\Users\\Vedant\\Desktop\\File Name.txt", "r");
+	f = fopen("File Name.txt", "r");
 	if(f == NULL)
 		{
 			printf("File Not Found. \n");
