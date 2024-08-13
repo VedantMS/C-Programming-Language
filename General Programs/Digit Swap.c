@@ -1,4 +1,4 @@
-// Replace all 0’s with 1’s in a Number.
+// Replace all 0â€™s with 1â€™s in a Number.
 
 #include<stdio.h>
 int main()
