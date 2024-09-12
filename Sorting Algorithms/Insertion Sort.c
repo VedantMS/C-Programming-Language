@@ -16,9 +16,9 @@ void accept(int n, int a[])
 		}
 }
 
-void display(int n, int a[])
+void display(int a[], int n)
 {
-	int i; 
+	int i;
 	
 	for(i=0; i<n; i++)
 		{
@@ -26,48 +26,50 @@ void display(int n, int a[])
 		}
 }
 
-void insertion_sort(int n, int a[])
+void insertion_sort(int a[], int n)
 {
-	int i, j, t; 
+	int i, j, t;
 	
-	for(i=1; i<=n; i++)
+	for(i=1; i<n; i++)
 		{
-			t = a[i];
-			for(j=i-1; j>=0; j--)
+			for(j=i; j>0; j--)
 				{
-					if(a[j] > t)
+					t = a[j];
+					
+					if(t < a[j-1])
 						{
-							a[j+1] = a[j];
+							a[j] = a[j -1];
 						}
+						
 					else
 						{
 							break;
 						}
-					
-					a[j+1] = t;
+
+					a[j - 1] = t;
 				}
 		}
-}	
+}
 
 int main()
 {
 	int n;
 	int *a;
 	
-	printf("Enter Total Number Of Elements : \n");
+	printf("Enter Total Elements : \n");
 	scanf("%i", &n);
 	
-	a = (int *)malloc(n * sizeof(int));
+	a = (int *)calloc(n, sizeof(int));
 	
-	accept(n, a);
-	display(n, a);
+	accept(a, n);
 	
-	insertion_sort(n, a);
+	insertion_sort(a, n);
 	
-	printf("Sorted array : \n");
-	display(n, a);
+	printf("Sorted Data : \n");
+	display(a, n);
 	
 	free(a);
 	
 	return 0;
+	
 }
