@@ -32,22 +32,14 @@ void insertion_sort(int a[], int n)
 	
 	for(i=1; i<n; i++)
 		{
-			for(j=i; j>0; j--)
+			t = a[i];
+			
+			for(j=i-1; j>=0 && a[j]>t; j--)
 				{
-					t = a[j];
-					
-					if(t < a[j-1])
-						{
-							a[j] = a[j -1];
-						}
-						
-					else
-						{
-							break;
-						}
-
-					a[j - 1] = t;
+					a[j + 1] = a[j];
 				}
+
+			a[j + 1] = t;
 		}
 }
 
@@ -59,7 +51,7 @@ int main()
 	printf("Enter Total Elements : \n");
 	scanf("%i", &n);
 	
-	a = (int *)calloc(n, sizeof(int));
+	a = (int *)malloc(n * sizeof(int));
 	
 	accept(a, n);
 	
