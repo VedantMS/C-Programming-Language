@@ -4,7 +4,7 @@
 #include<stdlib.h>
 #include<time.h>
 
-void accept(int n, int a[])
+void accept(int a[], int n)
 {
 	int i; 
 	
@@ -62,6 +62,9 @@ int main()
 	a = (int *)calloc(n, sizeof(int));
 	
 	accept(a, n);
+	
+	printf("Unsorted Data : \n");
+	display(a, n);
 	
 	insertion_sort(a, n);
 	
