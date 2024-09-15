@@ -2,38 +2,35 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
 
-void accept(int a[], int n)
+void input(int a[], int n)
 {
 	int i=0;
-	
-	printf("Enter Elements : \n");
+	srand(time(NULL));
 	for(i=0; i<n; i++)
 		{
-			scanf("%i", &a[i]);
+			a[i] = rand()%100;
 		}
 }
 
 void display(int a[], int n)
 {
 	int i=0;
-	
 	for(i=0; i<n; i++)
 		{
-			printf("%i \n", a[i]);
+			printf("%i \t", a[i]);
 		}
 }
 
-void merge(int a[], int i1, int j1, int i2, int j2)
+void merge(int a[], int i1, int i2, int j1, int j2)
 {
+	int i=i1, j, k=0;
 	int t[50];
-	int i, j, k;
-	
 	i = i1;
-	j = i2;
-	k = 0;
+	j = j1;
 	
-	while(i<=j1 && j<=j2)
+	while(i<=i2 && j<=j2)
 		{
 			if(a[i] < a[j])
 				{
@@ -44,58 +41,51 @@ void merge(int a[], int i1, int j1, int i2, int j2)
 					t[k++] = a[j++];
 				}
 		}
-	
-	while(i <= j1)
+	while(i<=i2)
 		{
 			t[k++] = a[i++];
 		}
-		
-	while(j <= j2)
+	while(j<=j2)
 		{
 			t[k++] = a[j++];
 		}
-	
-	for(i=i1, j=0; i<=j2; i++, j++)
+	for(i=i1, j=0; i<=j2; i++)
 		{
-			a[i] = t[j];
+			a[i] = t[j++];
 		}
 }
-
-void merge_sort(int a[], int i, int j)
+void merge_sort(int a[], int start, int end)
 {
 	int mid;
 	
-	if(i < j)
+	if(start < end)
 		{
-			mid = (i + j) / 2;
+			mid = (start + end) / 2;
 			
-			merge_sort(a, i, mid);
-			merge_sort(a, mid+1, j);
-			merge(a, i, mid, mid+1, j);
+			merge_sort(a, start, mid);
+			merge_sort(a, mid+1, end);
+			merge(a, start, mid, mid+1, end);
 		}
-}	
-	
+}
+
 int main()
 {
-	int i, n;
+	int n;
 	int *a;
-	
-	printf("Total number of elements : \n");
+	printf("Enter Total Number Of Elements : \n");
 	scanf("%i", &n);
 	
 	a = (int *)malloc(n * sizeof(int));
 	
-	accept(a, n);
+	input(a, n);
 	
-	printf("Unsorted data : \n");
+	printf("Unsorted Data : \n");
 	display(a, n);
 	
 	merge_sort(a, 0, n-1);
 	
-	printf("Sorted data : \n");
-	display(a, n);	
+	printf("\nSorted Data : \n");
+	display(a, n);
 	
-	return 0;	
+	return 0;
 }
-
-
