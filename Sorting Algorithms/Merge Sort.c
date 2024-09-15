@@ -19,13 +19,13 @@ void display(int a[], int n)
 	int i=0;
 	for(i=0; i<n; i++)
 		{
-			printf("%i \t", a[i]);
+			printf("%i \n", a[i]);
 		}
 }
 
 void merge(int a[], int i1, int i2, int j1, int j2)
 {
-	int i=i1, j, k=0;
+	int i, j, k=0;
 	int t[50];
 	i = i1;
 	j = j1;
