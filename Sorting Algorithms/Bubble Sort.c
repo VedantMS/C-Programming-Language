@@ -18,20 +18,27 @@ void input(int a[], int n)
 
 void bubble_sort(int a[], int n)
 {
-	int temp; 
+	int temp, flag; 
 	
-	for(int i=n-1; i>=0; i--)
-		{
-			for(int j=0; j<i; j++)
-				{
-					if(a[j] > a[j+1])
-						{
-							temp = a[j];
-							a[j] = a[j+1];
-							a[j+1] = temp;
-						}
-				}
-		}
+	while(1)
+	{
+		flag = 0;
+		for(int i=0; i<n-1; i++)
+			{
+				if(a[i] > a[i+1])
+					{
+						temp = a[i];
+						a[i] = a[i+1];
+						a[i+1] = temp;
+						flag++;
+					}
+			}
+		
+		if(flag == 0)
+			{
+				break;
+			}
+	}
 }
 
 void display(int a[], int n)
@@ -60,7 +67,7 @@ int main()
 	
 	bubble_sort(a, n); 
 	
-	printf("Sorted Array : \n");
+	printf("\nSorted Array : \n");
 	display(a, n);
 	
 	return 0;
