@@ -2,7 +2,7 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-#include "C:\\Users\\Vedant\\Desktop\\Singly Linked List.h"
+#include "Singly Linked List.h"
 
 int main()
 {
