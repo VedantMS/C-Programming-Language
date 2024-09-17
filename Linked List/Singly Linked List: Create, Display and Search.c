@@ -1,4 +1,4 @@
-// Singly Linked List: Create, Display and Search.c 
+// Singly Linked List: Create, Display and Search 
 
 #include<stdio.h>
 #include<stdlib.h>
