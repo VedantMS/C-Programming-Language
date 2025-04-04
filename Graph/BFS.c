@@ -20,6 +20,7 @@ void bfs(int n)
 					v[i] = 1;
 				}
 		}
+	
 	bfs(n);
 }
 
